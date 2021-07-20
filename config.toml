@@ -25,11 +25,11 @@ link = "contact@squaredcow.dev"
 
 [[params.social]]
 name = "github"
-link = "https://github.com/warcod3r"
+link = "https://github.com/squaredcow"
 
 [[params.social]]
 name = "twitter"
-link = "https://twitter.com/warcod3r"
+link = "https://twitter.com/squaredcow"
 
 [[params.social]]
 name = "linkedin"
