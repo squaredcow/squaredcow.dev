@@ -4,7 +4,7 @@ date: 2021-07-15
 description: Introduction to CRDTs
 ---
 
-## Init Journey
+## Init Journey and Journal
 
 These past months I've been helping out with technical screen interviews on the job, the regular 1-hour meeting in which the candidate is given a code challenge and must provide a decent working solution by the end of it. 
 
@@ -32,28 +32,34 @@ Quoting:
 
 > Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). 
 
-This next infographic is meant to provide you an understable glimpse of eventual consitency.
+The infographic below displays an understandable glimpse of **eventual consistency** in _optimistic replications_.
 
 ![The AP of CAP](/images/excalidraws/the_ap_of_cap.png)
 a). The AP of CAP
 
 ## Diving into CRDTs
 
-### What is a CRDT?
+To properly define a CRDT we need to look into the smaller pieces used for their construction and later elaborate on the type of operations they can execute.
 
+### The clay and bricks of CRDTs
 
-We propose the concept of a convergent or commutative replicated data type (CRDT), forwhich some simple mathematical properties ensure eventual consistency. 
+CRDTs build and operate with **mutable** and **immutable** data types. The immutable types are named **atoms**, and they hold characteristics, such as:
 
-, 
-- Replicas of any CRDT converge to a common state that is equivalent to some correct sequential execution. 
+1. Their content determines the type, e.g., primitives.
+2. They are copiable in between processes. 
+3. If two of them have the same contents, they are equal.
 
-- As a CRDT requires no synchronisation, an update executes immediately, unaffected by network latency,faults, or disconnection. 
+Meanwhile, the mutable types are named **objects** and have different characteristics than atoms, such as:
 
-- It is extremely scalable and is fault-tolerant, and does not requiremuch mechanism. 
- 
- Application areas may include computation in delay-tolerant networks,latency tolerance in wide-area networks, disconnected operation, churn-tolerant peer-to-peercomputing, data aggregation, and partition-tolerant cloud computing.
+1. They hold identity and initial state.
+2. The contents of an object, also known as payload, are conformed by any number of atoms or objects.
+3. They expose an interface that defines contractual operations on the object.
+4. They are replicable in between processes. 
+5. If two objects have the same identity but are present in different processes, they are considered replicas.
 
-A data-structure designed for distributed computing meant to be used in distributed storages and multi-user applications.
+The operations exposed for working with objects may follow two different approaches.
+
+### State-based and Operation-based
 
 ## Building basic CRDTs
 
@@ -149,7 +155,7 @@ public final class GCounter implements Counter<Integer> {
 ```
 d). GCounter implementation in Java
 
-##  Next steps
+## Closing words and next-steps
 
 This is an initial dive into the CRDTs structures themselves, we will eventually go deeper to construct a cluster of replicas that operate with them. We still need to go first through the rest of the structures mentioned, such as: *registers, sets and graphs*, but let's have those on a second entry on this blog series.
 

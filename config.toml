@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "squaredcow.dev"
 theme="cactus"
 copyright = "© Luis Vaca"
-# Code Highlight
-# Good one: tango, xcode
+# Code Highlight: https://xyproto.github.io/splash/docs/longer/all.html
+# Good one: tango, xcode, dracula
 pygmentsstyle = "dracula" 
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
