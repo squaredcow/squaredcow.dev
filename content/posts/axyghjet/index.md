@@ -57,9 +57,14 @@ Meanwhile, the mutable types are named **objects** and have different characteri
 4. They are replicable in between processes. 
 5. If two objects have the same identity but are present in different processes, they are considered replicas.
 
-The operations exposed for working with objects may follow two different approaches.
+The operations exposed for working with objects may follow two different approaches: state-based and operation-based.
 
 ### State-based and Operation-based
+In **state-based** _(passive)_ replication, every state-changing operation occurs at the source then the system propagates the modified payload to an arbitrary pair of replicas infinitely often. The CRDTs implementing a state-based approach are named Convergent Replicated Data Type, **CvRDTs**.
+
+Meanwhile, in **operation-based** _(active)_ replication, the system transmits the state-changing operations in two phases: `at-source` (local) and `downstream` (async. in replica) one after the other, and both of them must execute atomically. The CRDTs implementing an operation-based strategy are named Commutative Replicated Data Type, **CmRDTs**.
+
+Now, let's have a quick grasp of one of the basic CvRDTs next.
 
 ## Building basic CRDTs
 
