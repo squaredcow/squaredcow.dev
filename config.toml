@@ -3,8 +3,9 @@ languageCode = "en-us"
 title = "squaredcow.dev"
 theme="cactus"
 copyright = "© Luis Vaca"
-# Code Highlight
-pygmentsstyle = "monokai"
+# Code Highlight: https://xyproto.github.io/splash/docs/longer/all.html
+# Good one: tango, xcode, dracula
+pygmentsstyle = "dracula" 
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
@@ -24,11 +25,11 @@ link = "contact@squaredcow.dev"
 
 [[params.social]]
 name = "github"
-link = "https://github.com/warcod3r"
+link = "https://github.com/squaredcow"
 
 [[params.social]]
 name = "twitter"
-link = "https://twitter.com/warcod3r"
+link = "https://twitter.com/squaredcow"
 
 [[params.social]]
 name = "linkedin"
