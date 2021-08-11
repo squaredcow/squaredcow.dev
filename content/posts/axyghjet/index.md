@@ -164,7 +164,7 @@ d). GCounter implementation in Java
 
 This is an initial dive into the CRDTs structures themselves, we will eventually go deeper to construct a cluster of replicas that operate with them. We still need to go first through the rest of the structures mentioned, such as: *registers, sets and graphs*, but let's have those on a second entry on this blog series.
 
-With nothing left to add, thank you for reading all the way through, until the next entry.
+With nothing left to add, thank you for reading all the way through, until next time.
 
 -- squaredcow
 
