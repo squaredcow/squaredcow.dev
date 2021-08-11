@@ -10,13 +10,13 @@ These past months I've been helping out with technical screen interviews on the 
 
 Surprisingly enough, the place I work at does not provide access to any interview platform to assess the candidate's skills, leaving me in a tight spot.  From time to time, I have to request them to open the IDE of their choice and kindly share the screen, which I found invasive and likely to reduce the formality of the process.
 
-Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; Just to mention a few, and all of them offer robust capabilities.
+Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; To mention a few, and all of them offer robust capabilities for online interviews.
 
-Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason.
+Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason, yet, these reflect intermittent issues from time to time.
 
-This situation got me intrigued and oddly inspired.
+And that situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?
 
-How do all these real-time collaborative text platforms operate? What is the engineering behind it?  Which type of technical challenge do they face, and which approaches do they follow? Plenty of questions, right? So, it is time to start research on the foundations.
+Plenty of questions, right? Here is where I start my amateur research on this particular topic: **collaborative text in distributed systems**.
 
 
 ## Collaborative Text: How does it work?
@@ -164,7 +164,7 @@ d). GCounter implementation in Java
 
 This is an initial dive into the CRDTs structures themselves, we will eventually go deeper to construct a cluster of replicas that operate with them. We still need to go first through the rest of the structures mentioned, such as: *registers, sets and graphs*, but let's have those on a second entry on this blog series.
 
-With nothing left to add, thank you for reading all the way through, until next entry.
+With nothing left to add, thank you for reading all the way through, until the next entry.
 
 -- squaredcow
 
