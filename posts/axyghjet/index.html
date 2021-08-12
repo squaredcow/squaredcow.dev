@@ -149,10 +149,10 @@ CRDTs for Collaborative Writing
 <h2 id=init-journey-and-journal>Init Journey and Journal</h2>
 <p>These past months I&rsquo;ve been helping out with technical screen interviews on the job, the regular 1-hour meeting in which the candidate is given a code challenge and must provide a decent working solution by the end of it.</p>
 <p>Surprisingly enough, the place I work at does not provide access to any interview platform to assess the candidate&rsquo;s skills, leaving me in a tight spot. From time to time, I have to request them to open the IDE of their choice and kindly share the screen, which I found invasive and likely to reduce the formality of the process.</p>
-<p>Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; Just to mention a few, and all of them offer robust capabilities.</p>
-<p>Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason.</p>
-<p>This situation got me intrigued and oddly inspired.</p>
-<p>How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow? Plenty of questions, right? So, it is time to start research on the foundations.</p>
+<p>Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; To mention a few, and all of them offer robust capabilities for online interviews.</p>
+<p>Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason, yet, these reflect intermittent issues from time to time.</p>
+<p>And that situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?</p>
+<p>Plenty of questions, right? Here is where I start my amateur research on this particular topic: <strong>collaborative text in distributed systems</strong>.</p>
 <h2 id=collaborative-text-how-does-it-work>Collaborative Text: How does it work?</h2>
 <p>Collaborative text web applications are asynchronous, fully powered by distributed systems, and challenged by their complexity. Consistency in the operations executed by the users takes the primary seat, while they are directly affected by the latency between the nodes.</p>
 <p>If two users write, update or delete the same word in the document. Which change is the right one? Is it the last one? Is it the first one? How do we handle this edit conflict?</p>
@@ -337,7 +337,7 @@ c). G-Counter OPS: merge and compare.</p>
 </div><p>d). GCounter implementation in Java</p>
 <h2 id=closing-words-and-next-steps>Closing words and next-steps</h2>
 <p>This is an initial dive into the CRDTs structures themselves, we will eventually go deeper to construct a cluster of replicas that operate with them. We still need to go first through the rest of the structures mentioned, such as: <em>registers, sets and graphs</em>, but let&rsquo;s have those on a second entry on this blog series.</p>
-<p>With nothing left to add, thank you for reading all the way through, until next entry.</p>
+<p>With nothing left to add, thank you for reading all the way through, until next time.</p>
 <p>&ndash; squaredcow</p>
 <section class=footnotes role=doc-endnotes>
 <hr>
