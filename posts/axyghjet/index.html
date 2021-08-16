@@ -126,7 +126,7 @@ Surprisingly enough, the place I work at does not provide access to any intervie
 <li><a href=#diving-into-crdts>Diving into CRDTs</a>
 <ul>
 <li><a href=#the-clay-and-bricks-of-crdts>The clay and bricks of CRDTs</a></li>
-<li><a href=#state-based-and-operation-based>State-based and Operation-based</a></li>
+<li><a href=#categories-of-crdts>Categories of CRDTS</a></li>
 </ul>
 </li>
 <li><a href=#building-basic-crdts>Building basic CRDTs</a>
@@ -158,18 +158,18 @@ CRDTs for Collaborative Writing
 <p>These past months I&rsquo;ve been helping out with technical screen interviews on the job, the regular 1-hour meeting in which the candidate is given a code challenge and must provide a decent working solution by the end of it.</p>
 <p>Surprisingly enough, the place I work at does not provide access to any interview platform to assess the candidate&rsquo;s skills, leaving me in a tight spot. From time to time, I have to request them to open the IDE of their choice and kindly share the screen, which I found invasive and likely to reduce the formality of the process.</p>
 <p>Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; To mention a few, and all of them offer robust capabilities for online interviews.</p>
-<p>Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason, yet, these reflect intermittent issues from time to time.</p>
-<p>And that situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?</p>
-<p>Plenty of questions, right? Here is where I start my amateur research on this particular topic: <strong>collaborative text in distributed systems</strong>.</p>
+<p>Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share the screen for any reason, yet, these reflect intermittent issues lke <strong>edit-lag</strong> from time to time.</p>
+<p>That situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?</p>
+<p>Those are plenty of questions, right? Here is where I start my amateur research on this particular topic: <strong>collaborative text in distributed systems</strong>.</p>
 <h2 id=collaborative-text-how-does-it-work>Collaborative Text: How does it work?</h2>
 <p>Collaborative text web applications are asynchronous, fully powered by distributed systems, and challenged by their complexity. Consistency in the operations executed by the users takes the primary seat, while they are directly affected by the latency between the nodes.</p>
 <p>If two users write, update or delete the same word in the document. Which change is the right one? Is it the last one? Is it the first one? How do we handle this edit conflict?</p>
 <p>In an article published in 2011 by <em>Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski</em> named <strong>&ldquo;A comprehensive study of Convergent and Commutative Replicated Data Types."</strong><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> they propose the design of shared data types capable of conflict-free eventual consistency.</p>
-<p>In which they elaborate:</p>
+<p>Quoting the Abstract:</p>
 <blockquote>
 <p>Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). (2011) <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
 </blockquote>
-<p>The infographic below displays an understandable glimpse of <strong>eventual consistency</strong> in <em>optimistic replications</em>.</p>
+<p>The infographic below displays an understandable glimpse of <strong>eventual consistency</strong> in <em>optimistic replications</em>. We will need at least this explanation as our bare minimum context to keep moving forward.</p>
 <p><img src=/images/excalidraws/the_ap_of_cap.png alt="The AP of CAP">
 a). The AP of CAP</p>
 <h2 id=diving-into-crdts>Diving into CRDTs</h2>
@@ -189,8 +189,8 @@ a). The AP of CAP</p>
 <li>They are replicable in between processes.</li>
 <li>If two objects have the same identity but are present in different processes, they are considered replicas.</li>
 </ol>
-<p>The operations exposed for working with objects may follow two different approaches: state-based and operation-based.</p>
-<h3 id=state-based-and-operation-based>State-based and Operation-based</h3>
+<p>The operations exposed for working with objects may follow two different approaches: <strong>state-based</strong> and <strong>operation-based</strong>.</p>
+<h3 id=categories-of-crdts>Categories of CRDTS</h3>
 <p>In <strong>state-based</strong> <em>(passive)</em> replication, every state-changing operation occurs at the source then the system propagates the modified payload to an arbitrary pair of replicas infinitely often. The CRDTs implementing a state-based approach are named Convergent Replicated Data Type, <strong>CvRDTs</strong>.</p>
 <p>Meanwhile, in <strong>operation-based</strong> <em>(active)</em> replication, the system transmits the state-changing operations in two phases: <code>at-source</code> (local) and <code>downstream</code> (async. in replica) one after the other, and both of them must execute atomically. The CRDTs implementing an operation-based strategy are named Commutative Replicated Data Type, <strong>CmRDTs</strong>.</p>
 <p>Now, let&rsquo;s have a quick grasp of one of the basic CvRDTs next.</p>
@@ -384,7 +384,7 @@ c). G-Counter OPS: merge and compare.</p>
 <li><a href=#diving-into-crdts>Diving into CRDTs</a>
 <ul>
 <li><a href=#the-clay-and-bricks-of-crdts>The clay and bricks of CRDTs</a></li>
-<li><a href=#state-based-and-operation-based>State-based and Operation-based</a></li>
+<li><a href=#categories-of-crdts>Categories of CRDTS</a></li>
 </ul>
 </li>
 <li><a href=#building-basic-crdts>Building basic CRDTs</a>
