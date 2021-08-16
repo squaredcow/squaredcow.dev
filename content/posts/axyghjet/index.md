@@ -11,11 +11,11 @@ Surprisingly enough, the place I work at does not provide access to any intervie
 
 Nowadays, there is a wide variety of paid services online such as CoderPad, CodeInterview, HackerRank, CoderByte; To mention a few, and all of them offer robust capabilities for online interviews.
 
-Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share his screen for any reason, yet, these reflect intermittent issues from time to time.
+Similarly, on the side of free software, we have etherpad, collabedit, and Plunker. These last ones have been an experience-saver when the candidate cannot share the screen for any reason, yet, these reflect intermittent issues lke **edit-lag** from time to time.
 
-And that situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?
+That situation got me intrigued and oddly inspired. How do all these real-time collaborative text platforms operate? What is the engineering behind it? Which type of technical challenge do they face, and which approaches do they follow?
 
-Plenty of questions, right? Here is where I start my amateur research on this particular topic: **collaborative text in distributed systems**.
+Those are plenty of questions, right? Here is where I start my amateur research on this particular topic: **collaborative text in distributed systems**.
 
 
 ## Collaborative Text: How does it work?
@@ -27,11 +27,11 @@ If two users write, update or delete the same word in the document. Which change
 
 In an article published in 2011 by _Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski_ named **"A comprehensive study of Convergent and Commutative Replicated Data Types."**[^1] they propose the design of shared data types capable of conflict-free eventual consistency.
 
-In which they elaborate: 
+Quoting the Abstract: 
 
 > Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). (2011) [^1]
 
-The infographic below displays an understandable glimpse of **eventual consistency** in _optimistic replications_.
+The infographic below displays an understandable glimpse of **eventual consistency** in _optimistic replications_. We will need at least this explanation as our bare minimum context to keep moving forward.
 
 ![The AP of CAP](/images/excalidraws/the_ap_of_cap.png)
 a). The AP of CAP
@@ -56,9 +56,9 @@ Meanwhile, the mutable types are named **objects** and have different characteri
 4. They are replicable in between processes. 
 5. If two objects have the same identity but are present in different processes, they are considered replicas.
 
-The operations exposed for working with objects may follow two different approaches: state-based and operation-based.
+The operations exposed for working with objects may follow two different approaches: **state-based** and **operation-based**.
 
-### State-based and Operation-based
+### Categories of CRDTS
 In **state-based** _(passive)_ replication, every state-changing operation occurs at the source then the system propagates the modified payload to an arbitrary pair of replicas infinitely often. The CRDTs implementing a state-based approach are named Convergent Replicated Data Type, **CvRDTs**.
 
 Meanwhile, in **operation-based** _(active)_ replication, the system transmits the state-changing operations in two phases: `at-source` (local) and `downstream` (async. in replica) one after the other, and both of them must execute atomically. The CRDTs implementing an operation-based strategy are named Commutative Replicated Data Type, **CmRDTs**.
