@@ -29,7 +29,7 @@ In an article published in 2011 by _Marc Shapiro, Nuno Preguiça, Carlos Baquero
 
 In which they elaborate: 
 
-> Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). [^1]
+> Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). (2011) [^1]
 
 The infographic below displays an understandable glimpse of **eventual consistency** in _optimistic replications_.
 
