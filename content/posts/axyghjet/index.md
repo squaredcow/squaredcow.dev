@@ -1,9 +1,8 @@
 ---
 title: CRDTs for Collaborative Writing
 date: 2021-07-31
-description: Introduction to CRDTs
 ---
-
+#### An introduction to Conflict-Free Replicated Data Types
 ## Init Journey and Journal
 
 These past months I've been helping out with technical screen interviews on the job, the regular 1-hour meeting in which the candidate is given a code challenge and must provide a decent working solution by the end of it. 
@@ -28,9 +27,9 @@ If two users write, update or delete the same word in the document. Which change
 
 In an article published in 2011 by _Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski_ named **"A comprehensive study of Convergent and Commutative Replicated Data Types."**[^1] they propose the design of shared data types capable of conflict-free eventual consistency.
 
-Quoting: 
+In which they elaborate: 
 
-> Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). 
+> Eventual consistency aims to ensure that replicas of some mutable shared object converge without foreground synchronisation. Previous approaches to eventual consistency are ad-hoc and error-prone. We study a principled approach: to base the design of shared data types on some simple formal conditions that are sufficient to guarantee eventual consistency. We call these types Convergent or Commutative Replicated Data Types (CRDTs). (2011) [^1]
 
 The infographic below displays an understandable glimpse of **eventual consistency** in _optimistic replications_.
 
@@ -86,7 +85,7 @@ To provide a more thorough view of one the counters mentioned above, we picked G
 
 ### Grow-only Counter (G-Counter)
 
-G-Counter is a state-based CRDT or CvRDT for positive increments only. As mentioned above it exposes a set of basic operations: *init, increment, value, merge and compare.*
+G-Counter is a state-based CRDT or CvRDT for positive increments only. As mentioned above it exposes a set of basic operations: *init, increment, value, merge and compare.* [^2]
 
 ![G-COunter OPs 1](/images/excalidraws/g-counter-ops-pt1.png)
 b). G-Counter OPS: init, increment and value.
@@ -168,4 +167,5 @@ With nothing left to add, thank you for reading all the way through, until next 
 
 -- squaredcow
 
-[^1]: Paper: https://hal.inria.fr/inria-00555588/document
+[^1]: https://hal.inria.fr/inria-00555588/document Shapiro, Marc; Preguiça, Nuno; Baquero, Carlos; Zawirski, Marek (13 January 2011). "A Comprehensive Study of Convergent and Commutative Replicated Data Types". Rr-7506.
+[^2]: https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type Section: Known CRDTs
