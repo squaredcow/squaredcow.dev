@@ -1,4 +1,4 @@
-## Copyright © 2021 Luis Vaca
+## Copyright © 2023 Luis Vaca
 
 All work done by the author is under dual-license. All the source code, is covered by the MIT License. All content and materials such as images, audios, records, etc. are covered by Creative Commons Attribution-ShareAlike 4.0 International License.  
 
