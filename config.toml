@@ -1,67 +1,126 @@
 baseURL = "https://squaredcow.dev/"
 languageCode = "en-us"
 title = "squaredcow.dev"
-theme="cactus"
+theme = "PaperMod"
 copyright = "© Luis Vaca"
-# Code Highlight: https://xyproto.github.io/splash/docs/longer/all.html
-# Good one: tango, xcode, dracula
-pygmentsstyle = "dracula" 
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+enableRobotsTXT = true
+enableEmoji = true
 
-paginate=3 # articles per page
+# New pagination format
+[pagination]
+pagerSize = 5
 
 [params]
-	mode="auto" # color-mode → light,dark or auto
-	useCDN=true # don't use CDNs for fonts and icons, instead serve them locally.
-	description = "As a reader of many sorts, this is me moving towards the world of writing. With time I realized that each new learning takes time from us. The way I see it, the last piece to complete the exchange is to write it down. No more drafts left unfinished! That said, dear reader: Welcome!"
-	mainSection = "posts"
+# Site info
+description = "As a reader of many sorts, this is me moving towards the world of writing. With time I realized that each new learning takes time from us. The way I see it, the last piece to complete the exchange is to write it down. No more drafts left unfinished! That said, dear reader: Welcome!"
+author = "Luis Vaca"
 
-# Social Tags
+# Theme settings
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+dateFormat = "2006-01-02"
 
-[[params.social]]
+# Dark mode settings
+defaultTheme = "auto" # can be "light", "dark", or "auto"
+disableThemeToggle = false
+
+
+# Home page settings
+[params.homeInfoParams]
+Title = "Hey there 👋"
+Content = "Welcome to my blog! As a reader of many sorts, this is me moving towards the world of writing."
+
+# Social icons
+[[params.socialIcons]]
 name = "email"
-link = "contact@squaredcow.dev"
+url = "mailto:contact@squaredcow.dev"
 
-[[params.social]]
+[[params.socialIcons]]
 name = "github"
-link = "https://github.com/squaredcow"
+url = "https://github.com/squaredcow"
 
-[[params.social]]
+[[params.socialIcons]]
 name = "twitter"
-link = "https://twitter.com/squaredcow"
+url = "https://twitter.com/squaredcow"
 
-[[params.social]]
+[[params.socialIcons]]
 name = "linkedin"
-link = "https://linkedin.com/in/luivaca"
+url = "https://linkedin.com/in/luivaca"
 
-[[params.social]]
+[[params.socialIcons]]
 name = "rss"
-link = "/index.xml"
+url = "/index.xml"
 
-# Main menu Items
-
+# Menu configuration
+[menu]
 [[menu.main]]
+identifier = "home"
 name = "Home"
 url = "/"
-weight = 1
+weight = 10
 
 [[menu.main]]
-name = "Blog"
-url = "/posts"
-weight = 2
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 20
 
 [[menu.main]]
-name = "Author"
-url = "/author"
-weight = 3
+identifier = "author"
+name = "About"
+url = "/author/"
+weight = 30
 
 [[menu.main]]
+identifier = "tags"
 name = "Tags"
-url = "/tags"
-weight = 4
+url = "/tags/"
+weight = 40
 
 [[menu.main]]
+identifier = "license"
 name = "License"
-url = "/license"
-weight = 5
+url = "/license/"
+weight = 50
+
+# Build settings
+[build]
+writeStats = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML"]
+term = ["HTML", "RSS"]
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[privacy]
+[privacy.disqus]
+disable = true
+[privacy.instagram]
+disable = true
+[privacy.x]
+disable = true
+[privacy.vimeo]
+disable = true
+[privacy.youtube]
+disable = true
+
+[markup]
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNos = false
+noClasses = false
+style = "dracula"
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

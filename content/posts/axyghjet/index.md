@@ -1,6 +1,12 @@
 ---
-title: CRDTs for Collaborative Writing
+title: "CRDTs for Collaborative Writing"
 date: 2021-07-31
+draft: false
+description: "An introduction to Conflict-Free Replicated Data Types and their application in collaborative text editing"
+tags: ["distributed systems", "CRDTs", "collaborative editing", "technical interview"]
+categories: ["technology"]
+ShowToc: true
+ShowBreadCrumbs: true
 ---
 #### An introduction to Conflict-Free Replicated Data Types
 ## Init Journey and Journal

@@ -1,3 +1,85 @@
-public
-resources/_gen
+# Hugo build artifacts
+public/
+resources/_gen/
 .hugo_build.lock
+hugo_stats.json
+
+# Hugo cache directory
+.cache/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Node.js (if using npm/yarn for assets)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Backup files
+*~
+*.tmp
+*.bak
+*.backup
+config-backup.toml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Build tools
+dist/
+build/
+
+# Hugo theme development
+/themes/*/node_modules/
+/themes/*/resources/_gen/
+
+# Local development
+.hugo_build.lock
+*.test
