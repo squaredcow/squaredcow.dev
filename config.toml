@@ -17,13 +17,18 @@ author = "Luis Vaca"
 
 # Theme settings
 ShowReadingTime = true
-ShowShareButtons = true
+ShowShareButtons = false
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowWordCount = true
 ShowRssButtonInSectionTermList = true
 dateFormat = "2006-01-02"
+
+# Privacy and security settings
+disableHLJS = false
+disableSearchInJS = false
+hideFooter = false
 
 # Dark mode settings
 defaultTheme = "auto" # can be "light", "dark", or "auto"
@@ -35,22 +40,18 @@ disableThemeToggle = false
 Title = "Hey there 👋"
 Content = "Welcome to my blog! As a reader of many sorts, this is me moving towards the world of writing."
 
-# Social icons
+# Social icons - Professional only
 [[params.socialIcons]]
-name = "email"
-url = "mailto:contact@squaredcow.dev"
+name = "linkedin"
+url = "https://linkedin.com/in/luivaca"
 
 [[params.socialIcons]]
 name = "github"
 url = "https://github.com/squaredcow"
 
 [[params.socialIcons]]
-name = "twitter"
-url = "https://twitter.com/squaredcow"
-
-[[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/luivaca"
+name = "buymeacoffee"
+url = "https://coff.ee/squaredcow"
 
 [[params.socialIcons]]
 name = "rss"
@@ -103,15 +104,32 @@ tag = "tags"
 category = "categories"
 
 [privacy]
+# Disable all external tracking and embeds for maximum privacy
 [privacy.disqus]
 disable = true
+
+[privacy.googleAnalytics]
+disable = true
+anonymizeIP = true
+respectDoNotTrack = true
+
 [privacy.instagram]
 disable = true
+
 [privacy.x]
 disable = true
+
+[privacy.twitter]
+disable = true
+
 [privacy.vimeo]
 disable = true
+
 [privacy.youtube]
+disable = true
+privacyEnhanced = true
+
+[privacy.tikTok]
 disable = true
 
 [markup]

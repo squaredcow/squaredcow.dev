@@ -138,3 +138,22 @@ a:hover {
     background: transparent;
     color: var(--primary);
 }
+
+/* Additional privacy and security enhancements */
+/* Prevent selection of sensitive elements */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Secure external links */
+a[href^="http"]:not([href*="squaredcow.dev"]) {
+    rel: "noopener noreferrer";
+}
+
+/* Hide elements that might leak information */
+.privacy-hidden {
+    display: none !important;
+}
