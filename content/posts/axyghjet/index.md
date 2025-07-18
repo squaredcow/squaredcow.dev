@@ -171,6 +171,8 @@ This is an initial dive into the CRDTs structures themselves, we will eventually
 
 With nothing left to add, thank you for reading all the way through, until next time.
 
+{{< buymeacoffee >}}
+
 -- squaredcow
 
 [^1]: https://hal.inria.fr/inria-00555588/document Shapiro, Marc; Preguiça, Nuno; Baquero, Carlos; Zawirski, Marek (13 January 2011). "A Comprehensive Study of Convergent and Commutative Replicated Data Types". Rr-7506.

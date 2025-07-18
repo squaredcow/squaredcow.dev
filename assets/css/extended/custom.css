@@ -8,9 +8,11 @@
     --font-primary: "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
     --font-secondary: "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
     
-    /* Light mode colors - Sober black, white, gray palette */
+    /* Light mode colors - Sober black, white, gray palette with blue accent */
     --primary: #2c2c2c;       /* Dark gray for primary accents */
     --secondary: #6c6c6c;     /* Medium gray for secondary text */
+    --accent: #4A90E2;        /* Subtle blue for links and interactive elements */
+    --accent-hover: #357ABD;  /* Darker blue for hover states */
     --theme: #ffffff;         /* White background */
     --entry: #fafafa;         /* Very light gray for card backgrounds */
     --tertiary: #e5e5e5;      /* Light gray for borders and dividers */
@@ -20,12 +22,14 @@
     --border: #d0d0d0;        /* Medium light gray for borders */
 }
 
-/* Dark mode colors - Sober black, white, gray palette */
+/* Dark mode colors - Sober black, white, gray palette with blue accent */
 .dark {
     --theme: #0f0f0f;         /* Very dark gray background */
     --entry: #1a1a1a;         /* Dark gray for card backgrounds */
     --primary: #e0e0e0;       /* Light gray for primary accents */
     --secondary: #a0a0a0;     /* Medium gray for secondary text */
+    --accent: #6BB6FF;        /* Lighter blue for dark mode links and interactive elements */
+    --accent-hover: #8AC7FF;  /* Even lighter blue for hover states in dark mode */
     --tertiary: #404040;      /* Dark gray for borders and dividers */
     --content: #f0f0f0;       /* Light gray for main text */
     --hljs-bg: #1e1e1e;       /* Dark gray for code blocks */
@@ -67,8 +71,10 @@ a:hover {
 }
 
 .tags a:hover {
-    background: var(--primary);
+    background: var(--accent);
     color: var(--theme);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
 }
 
 /* Improve post content typography for monospace */
@@ -102,17 +108,17 @@ a:hover {
     color: var(--primary);
 }
 
-/* Additional styling for sober theme */
+/* Additional styling for sober theme with blue accent */
 /* Links in content */
 .post-content a {
-    color: var(--content);
+    color: var(--accent);
     text-decoration: underline;
-    text-decoration-color: var(--secondary);
+    text-decoration-color: var(--accent);
 }
 
 .post-content a:hover {
-    color: var(--primary);
-    text-decoration-color: var(--primary);
+    color: var(--accent-hover);
+    text-decoration-color: var(--accent-hover);
 }
 
 /* Button styling - exclude theme toggle */
@@ -156,4 +162,18 @@ a[href^="http"]:not([href*="squaredcow.dev"]) {
 /* Hide elements that might leak information */
 .privacy-hidden {
     display: none !important;
+}
+
+/* Buy Me a Coffee button styling */
+.buymeacoffee-wrapper {
+    transition: transform 0.2s ease;
+}
+
+.buymeacoffee-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.buymeacoffee-wrapper img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }

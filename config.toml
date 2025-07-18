@@ -1,6 +1,6 @@
 baseURL = "https://squaredcow.dev/"
 languageCode = "en-us"
-title = "squaredcow.dev"
+title = "writing-space/"
 theme = "PaperMod"
 copyright = "© Luis Vaca"
 enableRobotsTXT = true
@@ -37,8 +37,8 @@ disableThemeToggle = false
 
 # Home page settings
 [params.homeInfoParams]
-Title = "Hey there 👋"
-Content = "Welcome to my blog! As a reader of many sorts, this is me moving towards the world of writing."
+Title = "Hello friend,"
+Content = "Please, pick any reading you find interesting. I hope you find it as engaging as I did when I wrote it."
 
 # Social icons - Professional only
 [[params.socialIcons]]
